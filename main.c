@@ -19,8 +19,8 @@ float totalErr;
 float currErr;
 float prevErr;
 float diffErr;
-float kp = .2;
-float ki = 0.005;
+float kp = .24;
+float ki = 0.006;
 float kd = 0; 
 float u0 = 22;
 
@@ -47,7 +47,7 @@ CY_ISR(inter)
     UART_PutString(strbuf2);
     
     //PID Loop
-    currErr = currTime - 336;
+    currErr = currTime - 327;
     if (currErr < 500){
         totalErr += currErr;
     }
